@@ -2,7 +2,7 @@
 
 """ P2P-STREAMS XBMC ADDON
 
-http://1torrent.tv module parser
+http://livefootballol module parser
 
 """
 import sys,os
@@ -18,9 +18,9 @@ import acestream as ace
 base_url = 'http://www.livefootballol.com/sopcast-channel-list.html'
 
 def module_tree(name,url,iconimage,mode,parser,parserfunction):
-	if not parserfunction: livefootballaol_main()
+	if not parserfunction: livefootballol_main()
     
-def livefootballaol_main():
+def livefootballol_main():
 	try:
 		source = abrir_url(base_url)
 	except: source="";mensagemok(traducao(40000),traducao(40128))
