@@ -16,14 +16,14 @@ from peertopeerutils.directoryhandle import *
 import acestream as ace
 import sopcast as sop
 
-base_url = "http://www.livefootballol.com/live-football-streaming.html"
+base_url = "http://www.livefootballol.com/"
 
 def module_tree(name,url,iconimage,mode,parser,parserfunction):
 	if not parserfunction: livefootballol_main()
     
 def livefootballol_main():
 	try:
-		source = abrir_url(base_url)
+		source = get_page_source(base_url + "live-football-streaming.html")
 	except: source="";xbmcgui.Dialog().ok(translate(40000),translate(40128))
 	if source:
 		match = re.compile('<div>\n<img src="(.+?)".+?\n<span class="RED">(.+?)<.+?\n(.+?)\n<a href="(.+?)">(.+?)</a>').findall(source)
